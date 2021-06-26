@@ -3,8 +3,7 @@
 - This dataset is obtained from https://www.kaggle.com/sakshigoyal7/credit-card-customers
 - The data was cleaned, by Remove CLIENTINUM (customers ID) as a unique identifier, and 0 replace 'unknown' values found in customers’ profile, by modes
 - Engineered features Gender and Marital Status features are modified with one-hot encoding, and other categorical features modified with label encoding
-- Train model with 5 different algorithms, and choose the top 3 for next hyperparameter tuning
-- Handle imbalanced class with scale_pos_weight(only for XGBoost)
+- Train model with 4 different algorithms, and choose the top 1 for next hyperparameter tuning(XGBoost)
 - Validate the model with data test
 
 ### Existing Problem
@@ -17,11 +16,50 @@ Prediction modelling for which customer is likely to churn, and Proactive Reenga
 Preventing profit loss from Customers’ churn and increasing company’s revenue.
 
 # Insight From the Data
+**1.**
+
 ![image](https://user-images.githubusercontent.com/83952278/123299142-69d4a200-d543-11eb-9a61-5ace501d6904.png)
 Insight :
-- Profil pengguna produk kartu kredit yang terbagi menjadi 5 kategori, dimana fokusan dari model kali ini akan membahas pada 
-- Dapat dilihat pada background marital status dan income category, terdapat nilai ‘unknown’ yang akan kita proses di data-preprocessing.
+- User profiles for credit card products are divided into 5 categories, where the focus of this model will be on 'Card Category'
+- There are 4 different categories in 'Card Category' user profile, but, 93% of the data is in `Blue Card` category
+- In the background of marital status and income category, there is a value of `Unknown` which will be processed in data-preprocessing.
 
 
+**2.**
 
+![image](https://user-images.githubusercontent.com/83952278/123448298-f72bfb00-d604-11eb-8f31-51ff6b153b8c.png)
 
+Insight :
+- 93% profit loss comes from 1,519 blue card holders churned customers, which dominating by having more than 90% customers in blue card only
+- The huge gap between blue card and other categories are the reason we need to focus to pick up from blue card holders
+
+**3.**
+
+![image](https://user-images.githubusercontent.com/83952278/123448447-1f1b5e80-d605-11eb-81f4-4ab8c08eaa87.png)
+
+Insight :
+- Despite having the largest user, blue card category is considerably low on transactions rather than any other cards
+- Blue card users only spends 29% from his credit card limit per year, meaning that we can still push to generate more spending to prevent churning
+
+**4.**
+
+![image](https://user-images.githubusercontent.com/83952278/123514705-7598a380-d6be-11eb-9700-6b789c17724b.png)
+
+Insight :
+- Customers owning only 1 or 2 products still likely to compare TYB Bank with other Banks or Credit Card services, and the ore likely they are from churning
+- Although in numbers, churn in the third products are pretty high, the number of existing or happy customers are also high
+
+**5.**
+
+![image](https://user-images.githubusercontent.com/83952278/123514930-88f83e80-d6bf-11eb-8a3d-5414120db866.png)
+
+Insight :
+- Customers owning only 1 or 2 products still likely to compare TYB Bank with other Banks or Credit Card services, and the ore likely they are from churning
+- Although in numbers, churn in the third products are pretty high, the number of existing or happy customers are also high
+
+# Data Modelling
+ | Model          | Recall  | Time
+ | Decision Tree  |   77%   | 56:07
+ | Random Forest  |   77%   | DNF 
+ | XGBoost        |   91%   | 55:13
+ | ADABoost       |   83%   | 55:13
