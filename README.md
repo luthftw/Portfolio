@@ -58,8 +58,15 @@ Insight :
 - Although in numbers, churn in the third products are pretty high, the number of existing or happy customers are also high
 
 # Data Modelling
- | Model          | Recall  | Time
- | Decision Tree  |   77%   | 56:07
- | Random Forest  |   77%   | DNF 
- | XGBoost        |   91%   | 55:13
- | ADABoost       |   83%   | 55:13
+
+```
+ | Model          | Recall  |
+ | -------------- | --------|
+ | Decision Tree  |   77%   |
+ | Random Forest  |   77%   | 
+ | XGBoost        |   91%   | 
+ | ADABoost       |   83%   | 
+ ```
+Recall is used to prevent incorrectly predicting ‘churn’-ed customers as’ not churn’. Meanwhile, its ok to engage with those who are mistakenly tagged as 'not churned'. It could potentially make them even happier. The `Train Recall Score` is about 98% and the `Test Recall Score` is about 91% 
+
+# Business Insight and Recommendation
