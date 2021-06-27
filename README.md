@@ -54,19 +54,72 @@ Insight :
 ![image](https://user-images.githubusercontent.com/83952278/123514930-88f83e80-d6bf-11eb-8a3d-5414120db866.png)
 
 Insight :
-- Customers owning only 1 or 2 products still likely to compare TYB Bank with other Banks or Credit Card services, and the ore likely they are from churning
-- Although in numbers, churn in the third products are pretty high, the number of existing or happy customers are also high
+- The more frequent customers contacting customers support, the more likely they are from churning
+- For more than 2,500 customers or  are contacting customers’ support 2-3 times, meaning that TYB Bank needs to improve the customers’ support service immediately to make their customers satisfied and not churning
+
+
 
 # Data Modelling
-
-```
- | Model          | Recall  |
- | -------------- | --------|
- | Decision Tree  |   77%   |
- | Random Forest  |   77%   | 
- | XGBoost        |   91%   | 
- | ADABoost       |   83%   | 
- ```
+ <table>
+ <thead>
+  <tr>
+   <th>Model</th><th>Recall</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td>Decision Tree</td><td>77%</td>
+  </tr>
+  <tr>
+   <td>Random Forest</td><td>77%</td>
+  </tr>
+  <tr>
+   <td>XGBoost</td><td>91%</td>
+  </tr>
+  <tr>
+   <td>ADABoost</td><td>83%</td>
+  </tr>
+ </tbody>
+</table>
+ 
+ 
 Recall is used to prevent incorrectly predicting ‘churn’-ed customers as’ not churn’. Meanwhile, its ok to engage with those who are mistakenly tagged as 'not churned'. It could potentially make them even happier. The `Train Recall Score` is about 98% and the `Test Recall Score` is about 91% 
 
 # Business Insight and Recommendation
+Based on our focus in the `Blue Card Category`, some aspects that affect their churning process are; low on transactions, number of products owned by customers, and how frequent the customers contacting CS. From these aspect, These are our recommendation:
+
+1. Cashback Rewards
+To attract more customers and prevent customers from inactivity, giving cashback rewards is one of our recommendation. There are terms and conditions to apply, so the cashback rewards still making profit to the TYB Bank.
+2. Customer Relationship & Customer Support Improvement
+From the aspect of the frequencies of customers contacting customer support, we recommending to give training  for customer relationship, also improving relationship from CS to the customer. The aspect that could be improved are number of products owned by customers and inactivity by customers
+
+
+# Team Behind This Project
+As the final project to finish Data Science program in Rakamin Academy, this model was built with a team consisted by 5 member, called GGS (including me)
+ <table>
+ <thead>
+  <tr>
+   <th>Member</th><th>Linkedin</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td>Mentor: Stephanie</td><td>https://id.linkedin.com/in/stephanie-stephanie</td>
+  </tr>
+  <tr>
+   <td>Muhammad Luthfi (me)</td><td>https://www.linkedin.com/in/luthftw/</td>
+  </tr>
+  <tr>
+   <td>Marteen Joshee Octavian</td><td>https://www.linkedin.com/in/marteen-joshe-o-156a111bb/</td>
+  </tr>
+  <tr>
+   <td>Salman Tulus Pribadi</td><td>https://www.linkedin.com/in/salman-pribadi/</td>
+  </tr>
+  <tr>
+   <td>Rama Satriya</td><td>https://www.linkedin.com/in/ramasatriya/</td>
+  </tr>
+ </tbody>
+</table>
+ 
+ 
+
